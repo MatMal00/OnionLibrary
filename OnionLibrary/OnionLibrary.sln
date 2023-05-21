@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnionLibrary.Domain", "Onio
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnionLibrary.Application", "OnionLibrary.Application\OnionLibrary.Application.csproj", "{D00B94E8-351F-46DB-91FE-B0C65D02A31C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnionLibrary.Infrastructure", "OnionLibrary.Infrastructure\OnionLibrary.Infrastructure.csproj", "{9C5059A9-A650-4435-935E-37FC3B0EC195}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{D00B94E8-351F-46DB-91FE-B0C65D02A31C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D00B94E8-351F-46DB-91FE-B0C65D02A31C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D00B94E8-351F-46DB-91FE-B0C65D02A31C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9C5059A9-A650-4435-935E-37FC3B0EC195}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C5059A9-A650-4435-935E-37FC3B0EC195}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C5059A9-A650-4435-935E-37FC3B0EC195}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C5059A9-A650-4435-935E-37FC3B0EC195}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
