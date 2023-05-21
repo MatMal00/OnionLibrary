@@ -5,6 +5,8 @@ VisualStudioVersion = 17.3.32825.248
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnionLibrary.Domain", "OnionLibrary.Domain\OnionLibrary.Domain.csproj", "{77CF4119-6565-450A-8D2E-CC768F7004BE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnionLibrary.Application", "OnionLibrary.Application\OnionLibrary.Application.csproj", "{D00B94E8-351F-46DB-91FE-B0C65D02A31C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{77CF4119-6565-450A-8D2E-CC768F7004BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{77CF4119-6565-450A-8D2E-CC768F7004BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{77CF4119-6565-450A-8D2E-CC768F7004BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D00B94E8-351F-46DB-91FE-B0C65D02A31C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D00B94E8-351F-46DB-91FE-B0C65D02A31C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D00B94E8-351F-46DB-91FE-B0C65D02A31C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D00B94E8-351F-46DB-91FE-B0C65D02A31C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

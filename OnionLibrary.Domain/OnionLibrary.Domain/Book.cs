@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace OnionLibrary.Domain
 {
-    internal class Book
+    public class Book
     {
         public int Id { get; set; }
         [Required]
