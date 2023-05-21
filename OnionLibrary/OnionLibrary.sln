@@ -3,11 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32825.248
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnionLibrary.Domain", "OnionLibrary.Domain\OnionLibrary.Domain.csproj", "{77CF4119-6565-450A-8D2E-CC768F7004BE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OnionLibrary.Domain", "OnionLibrary.Domain\OnionLibrary.Domain.csproj", "{77CF4119-6565-450A-8D2E-CC768F7004BE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnionLibrary.Application", "OnionLibrary.Application\OnionLibrary.Application.csproj", "{D00B94E8-351F-46DB-91FE-B0C65D02A31C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OnionLibrary.Application", "OnionLibrary.Application\OnionLibrary.Application.csproj", "{D00B94E8-351F-46DB-91FE-B0C65D02A31C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnionLibrary.Infrastructure", "OnionLibrary.Infrastructure\OnionLibrary.Infrastructure.csproj", "{9C5059A9-A650-4435-935E-37FC3B0EC195}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OnionLibrary.Infrastructure", "OnionLibrary.Infrastructure\OnionLibrary.Infrastructure.csproj", "{9C5059A9-A650-4435-935E-37FC3B0EC195}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnionLibrary.REST.API", "OnionLibrary.REST.API\OnionLibrary.REST.API.csproj", "{7BABF1C6-6BD4-41A9-B071-0E2432ACF391}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{9C5059A9-A650-4435-935E-37FC3B0EC195}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9C5059A9-A650-4435-935E-37FC3B0EC195}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9C5059A9-A650-4435-935E-37FC3B0EC195}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7BABF1C6-6BD4-41A9-B071-0E2432ACF391}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7BABF1C6-6BD4-41A9-B071-0E2432ACF391}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7BABF1C6-6BD4-41A9-B071-0E2432ACF391}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7BABF1C6-6BD4-41A9-B071-0E2432ACF391}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
