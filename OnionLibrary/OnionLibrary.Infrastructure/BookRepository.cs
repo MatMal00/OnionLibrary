@@ -10,14 +10,24 @@ namespace OnionLibrary.Infrastructure
 {
     public class BookRepository : IBookRepository
     {
-        public static List<Book> books = new()
+        private readonly LibraryDbContext _libraryDbContext;
+
+        public BookRepository(LibraryDbContext libraryDbContext)
         {
-            new Book { Id = 1, Author = "dsada", BookDescription = "dsadsa", CategoryId = 1, ImageUrl = "", IsRentable = true, Price = 12, Quantity = 5, Rating = "4.5", Title = "TITLE" },
-        };
+            _libraryDbContext = libraryDbContext;
+        }
 
         public List<Book> GetBooks()
         {
-            return books;
+            return _libraryDbContext.Books.ToList();
+        }
+
+        public Book CreateBook(Book book)
+        {
+            _libraryDbContext.Books.Add(book);
+            _libraryDbContext.SaveChanges();
+
+            return book;
         }
     }
 }

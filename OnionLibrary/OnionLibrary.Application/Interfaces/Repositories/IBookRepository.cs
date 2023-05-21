@@ -9,6 +9,7 @@ namespace OnionLibrary.Application.Repositories
 {
     public interface IBookRepository
     {
-        List<Book> GetBooks(); 
+        List<Book> GetBooks();
+        Book CreateBook(Book kook);
     }
 }

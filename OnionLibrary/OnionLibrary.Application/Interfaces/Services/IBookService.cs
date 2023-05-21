@@ -10,5 +10,6 @@ namespace OnionLibrary.Application.Services
     public interface IBookService
     {
         List<Book> GetBooks();
+        Book CreateBook(Book book);
     }
 }

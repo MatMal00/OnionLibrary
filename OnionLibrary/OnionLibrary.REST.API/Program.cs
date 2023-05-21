@@ -1,8 +1,12 @@
+using Microsoft.EntityFrameworkCore;
 using OnionLibrary.Application.Repositories;
 using OnionLibrary.Application.Services;
 using OnionLibrary.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
+
+// Register configuratrion
+ConfigurationManager configuration = builder.Configuration;
 
 // Add services to the container.
 
@@ -11,6 +15,10 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+// Add database service
+builder.Services.AddDbContext<LibraryDbContext>(opt => opt.UseSqlServer(configuration.GetConnectionString("DevConnection"), 
+    b => b.MigrationsAssembly("OnionLibrary.REST.API"))
+);
 builder.Services.AddScoped<IBookService, BookService>();
 builder.Services.AddScoped<IBookRepository, BookRepository>();
 

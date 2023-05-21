@@ -22,5 +22,13 @@ namespace OnionLibrary.REST.API.Controllers
             var books = _bookService.GetBooks();
             return Ok(books); 
         }
+
+        [HttpPost]
+        public ActionResult<Book> PostBook(Book book)
+        {
+            var newBook = _bookService.CreateBook(book);
+
+            return newBook;
+        }
     }
 }

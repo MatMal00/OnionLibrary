@@ -20,7 +20,15 @@ namespace OnionLibrary.Application.Services
         public List<Book> GetBooks()
         {
             var books = _bookRepository.GetBooks();
+
             return books;
+        }
+
+        public Book CreateBook(Book book)
+        {
+            _bookRepository.CreateBook(book);
+
+            return book;
         }
     }
 }
