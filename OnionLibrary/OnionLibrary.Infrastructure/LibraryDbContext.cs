@@ -1,5 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore;
-using OnionLibrary.Domain;
+﻿using LibraryBackend.Models;
+using Microsoft.EntityFrameworkCore;
+using OnionLibrary.Domain.DBModels;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -20,6 +21,7 @@ namespace OnionLibrary.Infrastructure
         }
 
         public virtual DbSet<Book> Books { get; set; }
+        public virtual DbSet<User> Users { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -64,6 +66,36 @@ namespace OnionLibrary.Infrastructure
                  .HasMaxLength(4)
                  .HasColumnName("rating");
             });
+
+            modelBuilder.Entity<User>(entity =>
+            {
+                entity.ToTable("users");
+
+                entity.Property(e => e.Id).HasColumnName("id").ValueGeneratedOnAdd();
+
+                entity.Property(e => e.Email)
+                    .IsRequired()
+                    .HasMaxLength(50)
+                    .HasColumnName("email");
+
+                entity.Property(e => e.FirstName)
+                    .IsRequired()
+                    .HasMaxLength(50)
+                    .HasColumnName("firstName");
+
+                entity.Property(e => e.Lastname)
+                    .IsRequired()
+                    .HasMaxLength(50)
+                    .HasColumnName("lastname");
+
+                entity.Property(e => e.PasswordHash)
+                    .IsRequired()
+                    .HasMaxLength(64)
+                    .HasColumnName("password_hash");
+
+                entity.Property(e => e.RoleId).HasColumnName("roleId");
+            });
+
 
             OnModelCreatingPartial(modelBuilder);
         }

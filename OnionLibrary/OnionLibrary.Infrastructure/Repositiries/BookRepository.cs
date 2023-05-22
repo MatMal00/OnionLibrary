@@ -1,12 +1,7 @@
 ﻿using OnionLibrary.Application.Repositories;
-using OnionLibrary.Domain;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using OnionLibrary.Domain.DBModels;
 
-namespace OnionLibrary.Infrastructure
+namespace OnionLibrary.Infrastructure.Repositiries
 {
     public class BookRepository : IBookRepository
     {

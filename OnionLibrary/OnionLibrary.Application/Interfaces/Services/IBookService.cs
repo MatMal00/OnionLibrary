@@ -1,4 +1,4 @@
-﻿using OnionLibrary.Domain;
+﻿using OnionLibrary.Domain.DBModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
