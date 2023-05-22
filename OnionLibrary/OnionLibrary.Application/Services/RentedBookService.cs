@@ -1,5 +1,7 @@
 ﻿using OnionLibrary.Application.Repositories;
 using OnionLibrary.Domain.DBModels;
+using OnionLibrary.Domain.RequestModels;
+using OnionLibrary.Domain.ResponseModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,9 +19,26 @@ namespace OnionLibrary.Application.Services
         {
             _rentedBookRepository = rentedBookRepository;
         }
-        public RentedBook PostRentedBook(RentedBook book)
+
+        public RentedBookResponse GetRentedBook(int id)
         {
-            return _rentedBookRepository.PostRentedBook(book);
+            var rentedBook = _rentedBookRepository.GetRentedBook(id);
+
+            return rentedBook;
+        }
+
+        public RentedBookByUserResponse GetRentedBooksByUserId(int id)
+        {
+            var rentedBookByUserId = _rentedBookRepository.GetRentedBooksByUserId(id);
+
+            return rentedBookByUserId;
+        }
+
+        public OrderPostRequest PostRentedBook(OrderPostRequest rentedBook)
+        {
+           var postRentedBook = _rentedBookRepository.PostRentedBook(rentedBook);
+
+            return postRentedBook;
         }
     }
 }
