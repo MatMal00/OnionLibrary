@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using OnionLibrary.Domain.DBModels;
 
-namespace OnionLibrary.Domain
+namespace OnionLibrary.Domain.DBModels
 {
     public partial class User
     {

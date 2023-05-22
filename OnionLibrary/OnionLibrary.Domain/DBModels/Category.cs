@@ -11,6 +11,6 @@ namespace OnionLibrary.Domain.DBModels
     {
         public int Id { get; set; }
         [Required]
-        public string CategoryName { get; set; }
+        public string CategoryName { get; set; } = string.Empty;
     }
 }

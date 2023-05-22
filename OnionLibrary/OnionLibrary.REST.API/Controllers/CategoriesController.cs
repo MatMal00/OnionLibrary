@@ -4,7 +4,7 @@ using OnionLibrary.Domain.DBModels;
 
 namespace OnionLibrary.REST.API.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/categories")]
     [ApiController]
     public class CategoriesController : ControllerBase
     {

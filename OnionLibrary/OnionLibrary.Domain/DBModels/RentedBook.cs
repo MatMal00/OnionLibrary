@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OnionLibrary.Domain
+namespace OnionLibrary.Domain.DBModels
 {
     public class RentedBook
     {

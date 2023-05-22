@@ -16,10 +16,9 @@ namespace OnionLibrary.Infrastructure.Repositiries
             new Category { Id = 1, CategoryName = "Horror", },
         };
 
-
         public List<Category> GetCategories()
         {
-            return categories;
+            throw new NotImplementedException();
         }
     }
 }
