@@ -1,4 +1,5 @@
 ﻿using OnionLibrary.Domain.DBModels;
+using OnionLibrary.Domain.RequestModels;
 using OnionLibrary.Domain.ResponseModels;
 using System;
 using System.Collections.Generic;
@@ -12,6 +13,7 @@ namespace OnionLibrary.Application.Repositories
     {
         List<BookResponse> GetBooks();
         Book CreateBook(Book kook);
+        void PutBook(int id, BookPutRequest book);
         void DeleteBook(int id);
     }
 }
