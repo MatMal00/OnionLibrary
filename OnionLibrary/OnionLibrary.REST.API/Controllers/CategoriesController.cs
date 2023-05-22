@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using OnionLibrary.Application.Services;
-using OnionLibrary.Domain;
+using OnionLibrary.Domain.DBModels;
 
 namespace OnionLibrary.REST.API.Controllers
 {

@@ -1,5 +1,4 @@
-﻿using LibraryBackend.Models;
-using OnionLibrary.Domain.CommonModels;
+﻿using OnionLibrary.Domain.CommonModels;
 using OnionLibrary.Domain.RequestModels;
 using System;
 using System.Collections.Generic;

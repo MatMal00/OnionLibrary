@@ -1,5 +1,4 @@
-﻿using LibraryBackend.Models;
-using Microsoft.Extensions.Configuration;
+﻿using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using OnionLibrary.Application.Interfaces.Repositories;
 using OnionLibrary.Domain.CommonModels;
