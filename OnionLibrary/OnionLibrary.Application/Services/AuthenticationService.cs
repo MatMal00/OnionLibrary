@@ -11,18 +11,18 @@ using System.Threading.Tasks;
 
 namespace OnionLibrary.Application.Services
 {
-    public class TokenService : ITokenService
+    public class AuthenticationService : IAuthenticationService
     {
-        private readonly ITokenRepository _tokenRepository;
+        private readonly IAuthenticationRepository _authenticationRepository;
 
-        public TokenService(ITokenRepository tokenRepository)
+        public AuthenticationService(IAuthenticationRepository authenticationRepository)
         {
-            _tokenRepository = tokenRepository; 
+            _authenticationRepository = authenticationRepository; 
         }
 
         public Tokens Authenticate(LoginRequest user)
         {
-            var token = _tokenRepository.Authenticate(user);
+            var token = _authenticationRepository.Authenticate(user);
 
             return token;
         }

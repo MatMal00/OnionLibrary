@@ -14,13 +14,13 @@ using System.Threading.Tasks;
 
 namespace OnionLibrary.Infrastructure.Repositiries
 {
-    public class TokenRepository : ITokenRepository
+    public class AuthenticationRepository : IAuthenticationRepository
     {
         private readonly LibraryDbContext _libraryDbContext;
         private readonly IConfiguration _configuration;
 
 
-        public TokenRepository(LibraryDbContext libraryDbContext, IConfiguration configuration)
+        public AuthenticationRepository(LibraryDbContext libraryDbContext, IConfiguration configuration)
         {
             _libraryDbContext = libraryDbContext;
             _configuration = configuration;

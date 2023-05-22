@@ -14,9 +14,9 @@ namespace OnionLibrary.REST.API.Controllers
     [ApiController]
     public class AuthenticationController : ControllerBase
     {
-        private readonly ITokenRepository _tokenRepository;
+        private readonly IAuthenticationRepository _tokenRepository;
 
-        public AuthenticationController(ITokenRepository tokenRepository)
+        public AuthenticationController(IAuthenticationRepository tokenRepository)
         {
             _tokenRepository = tokenRepository; 
         }

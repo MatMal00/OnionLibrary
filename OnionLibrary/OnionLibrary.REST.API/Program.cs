@@ -30,8 +30,8 @@ builder.Services.AddDbContext<LibraryDbContext>(opt => opt.UseSqlServer(configur
 builder.Services.AddScoped<IBookService, BookService>();
 builder.Services.AddScoped<IBookRepository, BookRepository>();
 
-builder.Services.AddScoped<ITokenService, TokenService>();
-builder.Services.AddScoped<ITokenRepository, TokenRepository>();
+builder.Services.AddScoped<IAuthenticationService, AuthenticationService>();
+builder.Services.AddScoped<IAuthenticationRepository, AuthenticationRepository>();
 
 // Add authentication config
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
