@@ -45,17 +45,18 @@ namespace OnionLibrary.Infrastructure.Repositiries
                         new Claim("UserRoleId", user.RoleId.ToString()),
                     };
 
+            var expires = DateTime.Now.AddMinutes(30);
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:Key"]));
             var signIn = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
             var token = new JwtSecurityToken(
                 _configuration["Jwt:Issuer"],
                 _configuration["Jwt:Audience"],
                 claims,
-                expires: DateTime.Now.AddMinutes(30),
+                expires,
                 signingCredentials: signIn);
 
 
-            return new Tokens { Token = new JwtSecurityTokenHandler().WriteToken(token) };
+            return new Tokens { Token = new JwtSecurityTokenHandler().WriteToken(token), AccessTokenExpires = expires, User = user };
         }
     }
 }
