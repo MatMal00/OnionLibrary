@@ -30,6 +30,14 @@ builder.Services.AddDbContext<LibraryDbContext>(opt => opt.UseSqlServer(configur
 builder.Services.AddScoped<IBookService, BookService>();
 builder.Services.AddScoped<IBookRepository, BookRepository>();
 
+builder.Services.AddScoped<ICategoryService, CategoryService>();
+
+builder.Services.AddScoped<IRoleService, RoleService>();
+
+builder.Services.AddScoped<IRentedBookService, RentedBookService>();
+
+builder.Services.AddScoped<IOrderService, OrderService>();
+
 builder.Services.AddScoped<IAuthenticationService, AuthenticationService>();
 builder.Services.AddScoped<IAuthenticationRepository, AuthenticationRepository>();
 
