@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 
 namespace OnionLibrary.Domain.CommonModels
 {
-    public class CommonStatus
+    public class BadRequestException : Exception
     {
-        public string Message { get; set; } = string.Empty;
-        public bool IsSuccess { get; set; } 
+        public BadRequestException(string message) : base(message)
+        {
+        }
     }
 }

@@ -36,15 +36,18 @@ namespace OnionLibrary.REST.API.Controllers
         }
 
         [HttpPost("register")]
-        public ActionResult<CommonStatus> Register(RegisterRequest register)
+        public ActionResult<string> Register(RegisterRequest register)
         {
+            try
+            {
+                var status = _authenticationRepository.Register(register);
 
-            var status = _authenticationRepository.Register(register);
-
-            if(!status.IsSuccess)
-                return BadRequest(status);
-
-            return Ok(status);
+                return Ok(status);
+            }
+            catch (BadRequestException e)
+            {
+                return NotFound(e.Message);
+            }
         }
     }
 }

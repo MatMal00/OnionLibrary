@@ -60,17 +60,17 @@ namespace OnionLibrary.Infrastructure.Repositiries
             return new Tokens { Token = new JwtSecurityTokenHandler().WriteToken(token), AccessTokenExpires = expires, User = user };
         }
 
-        public CommonStatus Register(RegisterRequest user)
+        public string Register(RegisterRequest user)
         {
             bool isAlreadyRegistered = _libraryDbContext.Users.Any(x => x.Email == user.Email);
 
             if (isAlreadyRegistered)
-                return new CommonStatus() { IsSuccess = false, Message = "Such an email already exists" };
+                throw new BadRequestException("Such an email already exists");
 
             _libraryDbContext.Users.Add(new User() { FirstName = user.FirstName, Lastname = user.Lastname, Email = user.Email, RoleId = 1, PasswordHash = Encoding.UTF8.GetBytes(user.Password) });
             _libraryDbContext.SaveChanges();
 
-            return new CommonStatus() { IsSuccess = true, Message = "Success" };
+            return "Success";
         }
     }
 }

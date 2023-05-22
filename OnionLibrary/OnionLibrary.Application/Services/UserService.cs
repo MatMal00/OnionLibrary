@@ -1,4 +1,5 @@
 ﻿using LibraryBackend.RequestModels;
+using OnionLibrary.Application.Interfaces.Repositories;
 using OnionLibrary.Application.Interfaces.Services;
 using OnionLibrary.Domain.ResponseModels;
 using System;
@@ -11,28 +12,28 @@ namespace OnionLibrary.Application.Services
 {
     public class UserService : IUserService
     {
-        private readonly IUserService _userService;
+        private readonly IUserRepository _userRepository;
 
-        public UserService(IUserService userService)
+        public UserService(IUserRepository userRepository)
         {
-            _userService = userService;
+            _userRepository = userRepository;
         }
 
         public void DeleteUser(int id)
         {
-            _userService.DeleteUser(id);    
+            _userRepository.DeleteUser(id);    
         }
 
         public List<UserSimplifiedResponse> GetUsers()
         {
-            var users = _userService.GetUsers();
+            var users = _userRepository.GetUsers();
 
             return users;
         }
 
         public void PutUser(int id, UserPutRequest user)
         {
-            _userService.PutUser(id, user);
+            _userRepository.PutUser(id, user);
         }
     }
 }
