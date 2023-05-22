@@ -1,5 +1,7 @@
 ﻿using OnionLibrary.Application.Repositories;
 using OnionLibrary.Domain.DBModels;
+using OnionLibrary.Domain.RequestModels;
+using OnionLibrary.Domain.ResponseModels;
 
 namespace OnionLibrary.Infrastructure.Repositiries
 {
@@ -12,9 +14,9 @@ namespace OnionLibrary.Infrastructure.Repositiries
             _libraryDbContext = libraryDbContext;
         }
 
-        public List<Book> GetBooks()
+        public List<BookResponse> GetBooks()
         {
-            return _libraryDbContext.Books.ToList();
+            throw new NotImplementedException();
         }
 
         public Book CreateBook(Book book)
@@ -24,5 +26,16 @@ namespace OnionLibrary.Infrastructure.Repositiries
 
             return book;
         }
+
+        public void DeleteBook(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void PutBook(int id, BookPutRequest book)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
+

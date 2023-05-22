@@ -11,5 +11,6 @@ namespace OnionLibrary.Application.Interfaces.Services
     public interface IAuthenticationService
     {
         Tokens Authenticate(LoginRequest user);
+        string Register(RegisterRequest user);
     }
 }

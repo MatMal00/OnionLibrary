@@ -1,7 +1,9 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
+using Microsoft.Win32;
 using OnionLibrary.Application.Interfaces.Repositories;
 using OnionLibrary.Domain.CommonModels;
+using OnionLibrary.Domain.DBModels;
 using OnionLibrary.Domain.RequestModels;
 using System;
 using System.Collections.Generic;
@@ -56,6 +58,19 @@ namespace OnionLibrary.Infrastructure.Repositiries
 
 
             return new Tokens { Token = new JwtSecurityTokenHandler().WriteToken(token), AccessTokenExpires = expires, User = user };
+        }
+
+        public string Register(RegisterRequest user)
+        {
+            bool isAlreadyRegistered = _libraryDbContext.Users.Any(x => x.Email == user.Email);
+
+            if (isAlreadyRegistered)
+                throw new BadRequestException("Such an email already exists");
+
+            _libraryDbContext.Users.Add(new User() { FirstName = user.FirstName, Lastname = user.Lastname, Email = user.Email, RoleId = 1, PasswordHash = Encoding.UTF8.GetBytes(user.Password) });
+            _libraryDbContext.SaveChanges();
+
+            return "Success";
         }
     }
 }

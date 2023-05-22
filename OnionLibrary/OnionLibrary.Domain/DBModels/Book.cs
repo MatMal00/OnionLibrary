@@ -11,12 +11,12 @@ namespace OnionLibrary.Domain.DBModels
     {
         public int Id { get; set; }
         [Required]
-        public string Title { get; set; } = string.Empty;
+        public string Title { get; set; }
         [Required]
-        public string Author { get; set; } = string.Empty;
-        public string BookDescription { get; set; } = string.Empty;
+        public string Author { get; set; }
+        public string BookDescription { get; set; }
         [Url]
-        public string ImageUrl { get; set; } = string.Empty;
+        public string ImageUrl { get; set; }
         public int CategoryId { get; set; }
         [Required]
         public decimal Price { get; set; }

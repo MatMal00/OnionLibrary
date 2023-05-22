@@ -26,5 +26,12 @@ namespace OnionLibrary.Application.Services
 
             return token;
         }
+
+        public string Register(RegisterRequest user)
+        {
+            var status = _authenticationRepository.Register(user);
+
+            return status;
+        }
     }
 }
