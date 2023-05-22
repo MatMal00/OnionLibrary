@@ -10,9 +10,9 @@ namespace OnionLibrary.Application.Services
 {
     public class CategoryService: ICategoryService
     {
-        private readonly ICategoryService _categoryRepository;   
+        private readonly ICategoryRepository _categoryRepository;   
 
-        public CategoryService(ICategoryService categoryRepository)
+        public CategoryService(ICategoryRepository categoryRepository)
         {
             _categoryRepository = categoryRepository;
         }
