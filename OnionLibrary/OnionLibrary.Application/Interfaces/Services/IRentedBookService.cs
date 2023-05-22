@@ -9,7 +9,7 @@ namespace OnionLibrary.Application.Services
 {
     public interface IRentedBookService
     {
-        RentedBook RentBook(RentedBook book);
+        RentedBook PostRentedBook(RentedBook book);
 
     }
 }

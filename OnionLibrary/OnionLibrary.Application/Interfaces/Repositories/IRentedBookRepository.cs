@@ -9,6 +9,6 @@ namespace OnionLibrary.Application.Repositories
 {
     public interface IRentedBookRepository
     {
-        RentedBook RentBook(RentedBook book);
+        RentedBook PostRentedBook(RentedBook book);
     }
 }

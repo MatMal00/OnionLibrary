@@ -17,9 +17,9 @@ namespace OnionLibrary.Application.Services
         {
             _rentedBookRepository = rentedBookRepository;
         }
-        public RentedBook RentBook(RentedBook book)
+        public RentedBook PostRentedBook(RentedBook book)
         {
-            return _rentedBookRepository.RentBook(book);
+            return _rentedBookRepository.PostRentedBook(book);
         }
     }
 }
