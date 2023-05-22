@@ -1,4 +1,6 @@
 ﻿using OnionLibrary.Domain.DBModels;
+using OnionLibrary.Domain.RequestModels;
+using OnionLibrary.Domain.ResponseModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +11,9 @@ namespace OnionLibrary.Application.Services
 {
     public interface IRentedBookService
     {
-        RentedBook PostRentedBook(RentedBook book);
+        RentedBookResponse GetRentedBook(int id);
+        RentedBookByUserResponse GetRentedBooksByUserId(int id);
+        OrderPostRequest PostRentedBook(OrderPostRequest rentedBook);
 
     }
 }
