@@ -1,4 +1,5 @@
 ﻿using OnionLibrary.Domain.DBModels;
+using OnionLibrary.Domain.ResponseModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,5 +11,16 @@ namespace OnionLibrary.Application.Repositories
     public interface ICategoryRepository
     {
         List<Category> GetCategories();
+
+        FilledCategoryResponse GetFilledCategory(int id);
+
+        Category GetCategory(int id);
+
+        Category PutCategory(int id, Category category);
+
+        Category PostCategory(Category category);
+
+        Category DeleteCategory(int id);
+
     }
 }
