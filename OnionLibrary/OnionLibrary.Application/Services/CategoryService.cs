@@ -1,5 +1,6 @@
 ﻿using OnionLibrary.Application.Repositories;
 using OnionLibrary.Domain.DBModels;
+using OnionLibrary.Domain.ResponseModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,5 +22,41 @@ namespace OnionLibrary.Application.Services
         {
             return _categoryRepository.GetCategories();
         }
+
+        public Category GetCategory(int id)
+        {
+            var category = _categoryRepository.GetCategory(id);
+
+            return category;
+        }
+
+        public FilledCategoryResponse GetFilledCategory(int id)
+        {
+            var category = _categoryRepository.GetFilledCategory(id);
+
+            return category;
+        }
+
+        public Category PostCategory(Category category)
+        {
+            var postCategory = _categoryRepository.PostCategory(category);
+
+            return postCategory;
+        }
+
+        public Category PutCategory(int id, Category category)
+        {
+            var putCategory = _categoryRepository.PutCategory(id, category);    
+
+            return putCategory;
+        }
+
+        public Category DeleteCategory(int id)
+        {
+            var deletedCategory = _categoryRepository.DeleteCategory(id);
+
+            return deletedCategory;
+        }
+
     }
 }
