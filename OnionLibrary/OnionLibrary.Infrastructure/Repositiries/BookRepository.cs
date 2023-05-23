@@ -36,6 +36,11 @@ namespace OnionLibrary.Infrastructure.Repositiries
         {
             throw new NotImplementedException();
         }
+
+        public BookResponse GetBook(int id)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
 

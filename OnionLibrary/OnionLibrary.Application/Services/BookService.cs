@@ -42,5 +42,12 @@ namespace OnionLibrary.Application.Services
         {
             _bookRepository.PutBook(id, book);
         }
+
+        public BookResponse GetBook(int id)
+        {
+            var book = _bookRepository.GetBook(id);
+
+            return book;
+        }
     }
 }
