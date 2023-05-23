@@ -1,6 +1,7 @@
 ﻿using LibraryBackend.RequestModels;
 using Microsoft.EntityFrameworkCore;
 using OnionLibrary.Application.Interfaces.Repositories;
+using OnionLibrary.Domain.CommonModels;
 using OnionLibrary.Domain.ResponseModels;
 using System;
 using System.Collections.Generic;
@@ -34,14 +35,50 @@ namespace OnionLibrary.Infrastructure.Repositiries
             }).ToList();
         }
 
+        public void PutUser(int id, UserPutRequest user)
+        {
+            if (id != user.Id)
+                throw new BadRequestException("Users are different");
+
+            var userFromDb = _libraryDbContext.Users.Find(user.Id);
+
+            if (userFromDb == null)
+                throw new BadRequestException("Something went wrong");
+
+            var roles = _libraryDbContext.Roles.ToList();
+
+            userFromDb.FirstName = user.FirstName;
+            userFromDb.Lastname = user.Lastname;
+            userFromDb.Email = user.Email;
+            userFromDb.RoleId = roles.Find(role => role.RoleName == user.RoleName).Id;
+
+            _libraryDbContext.Entry(userFromDb).State = EntityState.Modified;
+
+            try
+            {
+                _libraryDbContext.SaveChanges();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!UserExists(id))
+                {
+                    throw new NotFoundException("Not found");
+                }
+                else
+                {
+                    throw;
+                }
+            }
+        }
+
         public void DeleteUser(int id)
         {
             throw new NotImplementedException();
         }
 
-        public void PutUser(int id, UserPutRequest user)
+        private bool UserExists(int id)
         {
-            throw new NotImplementedException();
+            return _libraryDbContext.Users.Any(e => e.Id == id);
         }
     }
 }

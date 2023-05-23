@@ -53,7 +53,7 @@ namespace OnionLibrary.REST.API.Controllers
 
         [Authorize]
         [HttpPut("{id}")]
-        public ActionResult<EmptyResult> PostBook(int id, BookPutRequest book)
+        public ActionResult<string> PutBook(int id, BookPutRequest book)
         {
             try
             {
@@ -68,7 +68,7 @@ namespace OnionLibrary.REST.API.Controllers
                 return NotFound(e.Message);
             }
 
-            return NoContent();
+            return "Edited";
         }
 
         [Authorize]
