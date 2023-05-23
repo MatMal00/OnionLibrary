@@ -1,7 +1,9 @@
-﻿using OnionLibrary.Application.Repositories;
+﻿using Microsoft.EntityFrameworkCore;
+using OnionLibrary.Application.Repositories;
 using OnionLibrary.Domain.DBModels;
 using OnionLibrary.Domain.RequestModels;
 using OnionLibrary.Domain.ResponseModels;
+using OnionLibrary.Infrastructure.Mapppers;
 
 namespace OnionLibrary.Infrastructure.Repositiries
 {
@@ -16,7 +18,10 @@ namespace OnionLibrary.Infrastructure.Repositiries
 
         public List<BookResponse> GetBooks()
         {
-            throw new NotImplementedException();
+            var books = _libraryDbContext.Books.ToList();
+            var categories = _libraryDbContext.Categories.ToList();
+
+            return books.Select(b => BookMapper.ToBookResponseModel(b, categories)).ToList();
         }
 
         public Book CreateBook(Book book)

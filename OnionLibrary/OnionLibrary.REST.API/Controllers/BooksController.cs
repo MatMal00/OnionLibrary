@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using OnionLibrary.Application.Services;
 using OnionLibrary.Domain.DBModels;
+using OnionLibrary.Domain.ResponseModels;
 
 namespace OnionLibrary.REST.API.Controllers
 {
@@ -17,18 +18,18 @@ namespace OnionLibrary.REST.API.Controllers
         }
 
         [HttpGet]
-        public ActionResult<List<Book>> Get()
+        public ActionResult<List<BookResponse>> Get()
         {
             var books = _bookService.GetBooks();
             return Ok(books); 
         }
 
         [HttpPost]
-        public ActionResult<Book> PostBook(Book book)
+        public ActionResult<BookResponse> PostBook(Book book)
         {
-            var newBook = _bookService.CreateBook(book);
+            _bookService.CreateBook(book);
 
-            return newBook;
+            return CreatedAtAction("GetBook", new { id = book.Id }, book);
         }
     }
 }
