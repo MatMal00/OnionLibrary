@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using OnionLibrary.Application.Services;
 using OnionLibrary.Domain.CommonModels;
@@ -41,6 +42,7 @@ namespace OnionLibrary.REST.API.Controllers
             }
         }
 
+        [Authorize]
         [HttpPost]
         public ActionResult<BookResponse> PostBook(Book book)
         {
@@ -49,8 +51,9 @@ namespace OnionLibrary.REST.API.Controllers
             return CreatedAtAction("GetBook", new { id = book.Id }, book);
         }
 
+        [Authorize]
         [HttpPut("{id}")]
-        public ActionResult<BookResponse> PostBook(int id, BookPutRequest book)
+        public ActionResult<EmptyResult> PostBook(int id, BookPutRequest book)
         {
             try
             {
@@ -60,8 +63,28 @@ namespace OnionLibrary.REST.API.Controllers
             {
                 return BadRequest(e.Message);
             }
+            catch (NotFoundException e)
+            {
+                return NotFound(e.Message);
+            }
 
             return NoContent();
+        }
+
+        [Authorize]
+        [HttpDelete("{id}")]
+        public ActionResult<string> DeleteBook(int id)
+        {
+            try
+            {
+                _bookService.DeleteBook(id);
+            }
+            catch (NotFoundException e)
+            {
+                return NotFound(e.Message);
+            }
+
+            return "Deleted";
         }
     }
 }

@@ -49,7 +49,7 @@ namespace OnionLibrary.Infrastructure.Repositiries
         public void PutBook(int id, BookPutRequest book)
         {
             if (id != book.Id)
-                throw new BadRequestException("This book does not exist");
+                throw new NotFoundException("This book does not exist");
 
             var bookFromDb = _libraryDbContext.Books.Find(book.Id);
             var categories = _libraryDbContext.Categories.ToList();
@@ -80,7 +80,33 @@ namespace OnionLibrary.Infrastructure.Repositiries
 
         public void DeleteBook(int id)
         {
-            throw new NotImplementedException();
+            var book = _libraryDbContext.Books.Find(id);
+            if (book == null)
+                throw new NotFoundException("This book does not exist");
+
+            var orders = _libraryDbContext.Orders.ToList();
+            var rented = _libraryDbContext.RentedBooks.ToList();
+            var bestSellers = _libraryDbContext.Bestsellers.ToList();
+
+            orders.ForEach(o =>
+            {
+                if (o.BookId == id)
+                    _libraryDbContext.Orders.Remove(o);
+            });
+            rented.ForEach(r =>
+            {
+                if (r.BookId == id)
+                    _libraryDbContext.RentedBooks.Remove(r);
+            });
+            bestSellers.ForEach(b =>
+            {
+                if (b.BookId == id)
+                    _libraryDbContext.Bestsellers.Remove(b);
+            });
+            _libraryDbContext.SaveChanges();
+
+            _libraryDbContext.Books.Remove(book);
+            _libraryDbContext.SaveChanges();
         }
 
         private bool BookExists(int id)
