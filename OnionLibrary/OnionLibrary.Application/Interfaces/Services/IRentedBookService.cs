@@ -13,7 +13,7 @@ namespace OnionLibrary.Application.Services
     {
         RentedBookResponse GetRentedBook(int id);
         RentedBookByUserResponse GetRentedBooksByUserId(int id);
-        OrderPostRequest PostRentedBook(OrderPostRequest rentedBook);
+        void PostRentedBook(OrderPostRequest rentedBook);
 
     }
 }

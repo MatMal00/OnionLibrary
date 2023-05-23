@@ -57,7 +57,7 @@ namespace OnionLibrary.Infrastructure.Repositiries
             throw new NotImplementedException();
         }
 
-        public OrderPostRequest PostRentedBook(OrderPostRequest rentedBook)
+        public void PostRentedBook(OrderPostRequest rentedBook)
         {
             var user = _libraryDbContext.Users.Find(rentedBook.UserId);
             var book = _libraryDbContext.Books.Find(rentedBook.BookId);
@@ -73,7 +73,6 @@ namespace OnionLibrary.Infrastructure.Repositiries
             _libraryDbContext.RentedBooks.Add(new RentedBook() { BookId = rentedBook.BookId, UserId = rentedBook.UserId, RentalDate = DateTime.Now });
             _libraryDbContext.SaveChangesAsync();
 
-            return NoContent();
         }
     }
 }

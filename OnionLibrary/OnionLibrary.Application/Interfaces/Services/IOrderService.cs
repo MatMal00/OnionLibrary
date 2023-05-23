@@ -14,7 +14,7 @@ namespace OnionLibrary.Application.Services
         OrderResponse GetOrder(int id);
         OrderResponse GetOrderByUser(int id);
         void PutOrder(int id, OrderPutRequest order);
-        Order PostOrder(OrderPutRequest order);
+        void PostOrder(OrderPostRequest order);
         void DeleteOrder(int id);
     }
 }
