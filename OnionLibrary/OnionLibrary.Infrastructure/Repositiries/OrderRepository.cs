@@ -1,52 +1,49 @@
 ﻿using OnionLibrary.Application.Repositories;
+using OnionLibrary.Domain.DBModels;
+using OnionLibrary.Domain.RequestModels;
+using OnionLibrary.Domain.ResponseModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using OnionLibrary.Domain.DBModels;
-using OnionLibrary.Domain.ResponseModels;
 
 namespace OnionLibrary.Infrastructure.Repositiries
 {
-    public class CategoryRepository:ICategoryRepository
+    public class OrderRepository : IOrderRepository
     {
 
         private readonly LibraryDbContext _libraryDbContext;
 
-        public CategoryRepository(LibraryDbContext libraryDbContext)
+        public OrderRepository(LibraryDbContext libraryDbContext)
         {
             _libraryDbContext = libraryDbContext;
         }
 
-        public List<Category> GetCategories()
+        public OrderResponse GetOrder(int id)
         {
             throw new NotImplementedException();
         }
 
-        public Category GetCategory(int id)
+        public OrderResponse GetOrderByUser(int id)
         {
             throw new NotImplementedException();
         }
 
-        public FilledCategoryResponse GetFilledCategory(int id)
+        public Order PostOrder(OrderPutRequest order)
         {
             throw new NotImplementedException();
         }
 
-        public Category PostCategory(Category category)
+        public Order PutOrder(int id, OrderPutRequest order)
         {
             throw new NotImplementedException();
         }
 
-        public Category PutCategory(int id, Category category)
+        public Order DeleteOrder(int id)
         {
             throw new NotImplementedException();
         }
 
-        public Category DeleteCategory(int id)
-        {
-            throw new NotImplementedException();
-        }
     }
 }
