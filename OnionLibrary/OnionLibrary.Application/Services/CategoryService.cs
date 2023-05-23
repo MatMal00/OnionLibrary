@@ -44,11 +44,9 @@ namespace OnionLibrary.Application.Services
             return postCategory;
         }
 
-        public Category PutCategory(int id, Category category)
+        public void PutCategory(int id, Category category)
         {
-            var putCategory = _categoryRepository.PutCategory(id, category);    
-
-            return putCategory;
+            _categoryRepository.PutCategory(id, category);    
         }
 
         public Category DeleteCategory(int id)

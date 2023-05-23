@@ -13,8 +13,8 @@ namespace OnionLibrary.Application.Repositories
     {
         OrderResponse GetOrder(int id);
         OrderResponse GetOrderByUser(int id);
-        Order PutOrder(int id, OrderPutRequest order);
-        Order PostOrder(OrderPutRequest order);
-        Order DeleteOrder(int id);
+        void PutOrder(int id, OrderPutRequest order);
+        void PostOrder(OrderPostRequest order);
+        void DeleteOrder(int id);
     }
 }

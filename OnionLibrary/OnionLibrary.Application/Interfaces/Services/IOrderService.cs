@@ -13,8 +13,8 @@ namespace OnionLibrary.Application.Services
     {
         OrderResponse GetOrder(int id);
         OrderResponse GetOrderByUser(int id);
-        Order PutOrder(int id, OrderPutRequest order);
+        void PutOrder(int id, OrderPutRequest order);
         Order PostOrder(OrderPutRequest order);
-        Order DeleteOrder(int id);
+        void DeleteOrder(int id);
     }
 }

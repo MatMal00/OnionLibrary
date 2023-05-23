@@ -33,24 +33,19 @@ namespace OnionLibrary.Application.Services
             return order;
         }
 
-        public Order PostOrder(OrderPutRequest order)
+        public void PostOrder(OrderPostRequest order)
         {
-            var postOrder = _orderRepository.PostOrder(order);
+            _orderRepository.PostOrder(order);
 
-            return postOrder;
 ;        }
 
-        public Order PutOrder(int id, OrderPutRequest order)
+        public void PutOrder(int id, OrderPutRequest order)
         {
-            var putOrder = _orderRepository.PutOrder(id, order);
-
-            return putOrder;
+          _orderRepository.PutOrder(id, order);
         }
-        public Order DeleteOrder(int id)
+        public void DeleteOrder(int id)
         {
-            var order = _orderRepository.DeleteOrder(id);
-
-            return order;
+           _orderRepository.DeleteOrder(id);
         }
 
     }

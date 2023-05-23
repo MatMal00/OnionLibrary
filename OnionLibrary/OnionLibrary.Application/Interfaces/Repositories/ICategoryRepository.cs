@@ -16,7 +16,7 @@ namespace OnionLibrary.Application.Repositories
 
         Category GetCategory(int id);
 
-        Category PutCategory(int id, Category category);
+        void PutCategory(int id, Category category);
 
         Category PostCategory(Category category);
 

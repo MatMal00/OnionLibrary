@@ -34,11 +34,9 @@ namespace OnionLibrary.Application.Services
             return rentedBookByUserId;
         }
 
-        public OrderPostRequest PostRentedBook(OrderPostRequest rentedBook)
+        public void PostRentedBook(OrderPostRequest rentedBook)
         {
-           var postRentedBook = _rentedBookRepository.PostRentedBook(rentedBook);
-
-            return postRentedBook;
+            _rentedBookRepository.PostRentedBook(rentedBook);
         }
     }
 }
