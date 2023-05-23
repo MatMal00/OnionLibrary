@@ -73,7 +73,27 @@ namespace OnionLibrary.Infrastructure.Repositiries
 
         public void DeleteUser(int id)
         {
-            throw new NotImplementedException();
+            var user = _libraryDbContext.Users.Find(id);
+            var orders = _libraryDbContext.Orders.ToList();
+            var rentedBooks = _libraryDbContext.RentedBooks.ToList();
+
+            if (user == null)
+                throw new NotFoundException("This user does not exist");
+
+            orders.ForEach(o =>
+            {
+                if (o.UserId == id)
+                    _libraryDbContext.Orders.Remove(o);
+            });
+            rentedBooks.ForEach(r =>
+            {
+                if (r.UserId == id)
+                    _libraryDbContext.RentedBooks.Remove(r);
+            });
+            _libraryDbContext.SaveChanges();
+
+            _libraryDbContext.Users.Remove(user);
+            _libraryDbContext.SaveChanges();
         }
 
         private bool UserExists(int id)

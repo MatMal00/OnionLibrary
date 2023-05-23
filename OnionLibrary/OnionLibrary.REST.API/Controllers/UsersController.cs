@@ -49,5 +49,21 @@ namespace OnionLibrary.REST.API.Controllers
             return "Edited";
         }
 
+        [Authorize]
+        [HttpDelete("{id}")]
+        public ActionResult<string> DeleteUser(int id)
+        {
+            try
+            {
+                _userService.DeleteUser(id);
+            }
+            catch (NotFoundException e)
+            {
+                return NotFound(e.Message);
+            }
+
+            return "Deleted";
+        }
+
     }
 }
