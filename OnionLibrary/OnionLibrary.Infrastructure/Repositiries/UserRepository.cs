@@ -1,4 +1,5 @@
 ﻿using LibraryBackend.RequestModels;
+using Microsoft.EntityFrameworkCore;
 using OnionLibrary.Application.Interfaces.Repositories;
 using OnionLibrary.Domain.ResponseModels;
 using System;
@@ -11,12 +12,29 @@ namespace OnionLibrary.Infrastructure.Repositiries
 {
     public class UserRepository : IUserRepository
     {
-        public void DeleteUser(int id)
+        private readonly LibraryDbContext _libraryDbContext;
+
+        public UserRepository(LibraryDbContext libraryDbContext)
         {
-            throw new NotImplementedException();
+            _libraryDbContext = libraryDbContext;
         }
 
         public List<UserSimplifiedResponse> GetUsers()
+        {
+            var users = _libraryDbContext.Users.ToList();
+            var roles = _libraryDbContext.Roles.ToList();
+
+            return users.Select(user => new UserSimplifiedResponse()
+            {
+                Id = user.Id,
+                Email = user.Email,
+                FirstName = user.FirstName,
+                Lastname = user.Lastname,
+                Role = roles.Find(role => role.Id == user.RoleId),
+            }).ToList();
+        }
+
+        public void DeleteUser(int id)
         {
             throw new NotImplementedException();
         }

@@ -12,6 +12,7 @@ namespace OnionLibrary.Application.Services
     public interface IBookService
     {
         List<BookResponse> GetBooks();
+        BookResponse GetBook(int id);
         Book CreateBook(Book kook);
         void PutBook(int id, BookPutRequest book);
         void DeleteBook(int id);
