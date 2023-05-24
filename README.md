@@ -45,5 +45,4 @@ Diagram bazy daynch:
 
 
 Autorzy:
-Mateusz Malec
-Patryk Łuszcz
+Mateusz Malec, Patryk Łuszcz
