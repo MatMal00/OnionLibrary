@@ -9,16 +9,16 @@ w programie sql server management studio, a następnie wykonać skrypt
 ![image](https://user-images.githubusercontent.com/101005328/219758874-6eb756d2-4904-439e-9c6c-5e797327c07a.png)
 
 3.	Kolejnym krokiem będzie uruchomienie projektu  
-![image](https://user-images.githubusercontent.com/101005328/219758847-aacbd3af-55ab-4f69-90c5-7b23565c9834.png)
+![start](https://github.com/MatMal00/OnionLibrary/assets/101005328/348c8d56-6b49-42c2-9cec-3eb9dc85b686)
 
 •	Należy zwrócić szczególną uwagę na to aby backend uruchamiał się jako pierwszy
- ![image](https://user-images.githubusercontent.com/101005328/219758826-07a4e170-2539-492f-858b-a8ddb83ee0a5.png)
+ ![order](https://github.com/MatMal00/OnionLibrary/assets/101005328/a6587cb9-029b-44ce-ae47-eeae0492cfb9)
 
-4.Po wykonaniu się pomyślniej kompilacji otworzą się nam dwie strony:
+4.Po wykonaniu się pomyślniej kompilacji otworzą się nam okienka z dokumentacja backendu oraz aplikacja frontowa:
 
  •  swagger – dokumentacja wszystkich dostępnych endpointów w aplikacji
  
- ![image](https://user-images.githubusercontent.com/101005328/219758804-43d5ed37-8f52-46a3-9bd1-01dca5be4335.png)
+ ![result](https://github.com/MatMal00/OnionLibrary/assets/101005328/4c2498c7-131c-4be2-ba03-172cdde928ea)
 
  •	aplikacja frontowa
 
@@ -42,3 +42,8 @@ Diagram bazy daynch:
 
 
 ![image](https://user-images.githubusercontent.com/101005328/219760658-b7e7fb7a-64de-40f4-a2af-a91d6cbd5a00.png)
+
+
+Autorzy:
+Mateusz Malec
+Patryk Łuszcz
