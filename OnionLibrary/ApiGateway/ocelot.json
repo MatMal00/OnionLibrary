@@ -1,0 +1,92 @@
+{
+  "Routes": [
+    // Customer Web API
+    {
+      "UpstreamPathTemplate": "/api/users",
+      "UpstreamHttpMethod": [ "Get", "Put" ],
+
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7249
+        }
+      ],
+      "DownstreamPathTemplate": "/api/users"
+    },
+    {
+      "UpstreamPathTemplate": "/api/users/{id}",
+      "UpstreamHttpMethod": [ "Delete" ],
+
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7249
+        }
+      ],
+      "DownstreamPathTemplate": "/api/users/{id}"
+    },
+
+    // Categories Web API
+    {
+      "UpstreamPathTemplate": "/api/categories",
+      "UpstreamHttpMethod": [ "Get" ],
+
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7249
+        }
+      ],
+      "DownstreamPathTemplate": "/api/categories"
+    },
+
+    // Books Web API
+    {
+      "UpstreamPathTemplate": "/api/books",
+      "UpstreamHttpMethod": [ "Get", "Post" ],
+
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7249
+        }
+      ],
+      "DownstreamPathTemplate": "/api/books"
+    },
+    {
+      "UpstreamPathTemplate": "/api/books/{id}",
+      "UpstreamHttpMethod": [ "Get", "Put", "Delete" ],
+
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7249
+        }
+      ],
+      "DownstreamPathTemplate": "/api/books/{id}"
+    },
+
+    // Auth Web API
+    {
+      "UpstreamPathTemplate": "/api/auth",
+      "UpstreamHttpMethod": [ "Post" ],
+
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7150
+        }
+      ],
+      "DownstreamPathTemplate": "/api/auth"
+    }
+  ],
+  "GlobalConfiguration": {
+    "BseUrl": "https://localhost:7105"
+  }
+}

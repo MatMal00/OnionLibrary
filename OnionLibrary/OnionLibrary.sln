@@ -15,6 +15,8 @@ Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "OnionLibrary.Client", "Onio
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthService", "AuthService\AuthService.csproj", "{E5380E5D-7129-43E4-AAC9-FBCBB8874B65}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiGateway", "ApiGateway\ApiGateway.csproj", "{1FED8FEC-5F00-48F4-8760-DFCF89C7B24D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,6 +49,10 @@ Global
 		{E5380E5D-7129-43E4-AAC9-FBCBB8874B65}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E5380E5D-7129-43E4-AAC9-FBCBB8874B65}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E5380E5D-7129-43E4-AAC9-FBCBB8874B65}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1FED8FEC-5F00-48F4-8760-DFCF89C7B24D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1FED8FEC-5F00-48F4-8760-DFCF89C7B24D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1FED8FEC-5F00-48F4-8760-DFCF89C7B24D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1FED8FEC-5F00-48F4-8760-DFCF89C7B24D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
