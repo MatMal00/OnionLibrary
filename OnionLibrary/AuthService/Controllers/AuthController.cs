@@ -1,23 +1,19 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using OnionLibrary.Application.Interfaces.Repositories;
 using OnionLibrary.Domain.CommonModels;
-using OnionLibrary.Domain.DBModels;
 using OnionLibrary.Domain.RequestModels;
 using OnionLibrary.Domain.ResponseModels;
-using System.Data;
-using System.Text;
 
-namespace OnionLibrary.REST.API.Controllers
+namespace AuthService.Controllers
 {
     [Route("api/auth")]
     [ApiController]
-    public class AuthenticationController : ControllerBase
+    public class AuthnController : ControllerBase
     {
         private readonly IAuthenticationRepository _authenticationRepository;
 
-        public AuthenticationController(IAuthenticationRepository authenticationRepository)
+        public AuthnController(IAuthenticationRepository authenticationRepository)
         {
             _authenticationRepository = authenticationRepository;
         }
