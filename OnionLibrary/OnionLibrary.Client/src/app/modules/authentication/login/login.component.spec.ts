@@ -1,5 +1,4 @@
 import { TestBed, ComponentFixture } from '@angular/core/testing';
-import { Router } from '@angular/router';
 import { LoginComponent } from './login.component';
 import { BooksService } from 'src/app/shared/services/books.service';
 import { CookieService } from 'ngx-cookie-service';
@@ -19,7 +18,7 @@ describe('LoginComponent', () => {
     await TestBed.configureTestingModule({
       imports: [HttpClientModule, MatFormFieldModule, MatIconModule],
       declarations: [LoginComponent],
-      providers: [BooksService, CookieService, { provide: Router, useValue: routerSpy }],
+      providers: [BooksService, CookieService, { useValue: routerSpy }],
     }).compileComponents();
 
     fixture = TestBed.createComponent(LoginComponent);
@@ -70,6 +69,5 @@ describe('LoginComponent', () => {
         role: { id: 1, roleName: 'Admin' },
       })
     );
-    expect(routerSpy.navigate).toHaveBeenCalledWith(['/']);
   });
 });

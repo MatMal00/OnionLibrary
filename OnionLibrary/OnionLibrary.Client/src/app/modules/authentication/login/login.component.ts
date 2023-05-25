@@ -52,11 +52,7 @@ export class LoginComponent {
 
           window.localStorage.setItem('user', JSON.stringify(user));
 
-          this._router.navigate(['/']);
-          
-          setTimeout(() => {
-            document.location.reload();
-          }, 1000);
+          this._booksService.letKnowAboutLogin.next(true);
         },
         error: (error) => {
           alert(error.error);

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BooksService } from '../../services/books.service';
 import { CookieService } from 'ngx-cookie-service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'shared-navbar',
@@ -16,9 +17,19 @@ export class NavbarComponent implements OnInit {
 
   authorizationToken!: boolean;
 
-  constructor(private _booksService: BooksService, private _cookieService: CookieService) {}
+  constructor(private _booksService: BooksService, private _cookieService: CookieService, private _router: Router) {}
 
   public ngOnInit(): void {
+    this._booksService.letKnowAboutLogin.subscribe((x) => {
+      if (x) {
+        this._router.navigate(['/']);
+
+        setTimeout(() => {
+          window.location.reload();
+        }, 1000);
+      }
+    });
+
     this._booksService.orders.subscribe((products) => {
       this.productsInBasket = products.length;
     });
