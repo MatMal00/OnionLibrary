@@ -3,7 +3,6 @@ import { FormBuilder } from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { UsersRolesConstants } from '../../constants/users.constants';
 import { BooksService } from '../../services/books.service';
-import { CategoriesConstants } from '../../constants/categories.constants';
 
 export interface EditUserModalData {
   id: number;
