@@ -14,6 +14,8 @@ export class BooksService {
   sendIdToPayment: BehaviorSubject<number> = new BehaviorSubject<any>(null);
   sendIdToRent: BehaviorSubject<number> = new BehaviorSubject<any>(null);
 
+  letKnowAboutLogin: Subject<boolean> = new Subject<any>();
+
   constructor(private _http: HttpClient) {}
 
   public getBooks(): Observable<Book[]> {
