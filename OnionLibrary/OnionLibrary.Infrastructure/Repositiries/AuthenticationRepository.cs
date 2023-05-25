@@ -56,8 +56,9 @@ namespace OnionLibrary.Infrastructure.Repositiries
                 expires,
                 signingCredentials: signIn);
 
+            var role = _libraryDbContext.Roles.Find(user.RoleId);
 
-            return new Tokens { Token = new JwtSecurityTokenHandler().WriteToken(token), AccessTokenExpires = expires, User = user };
+            return new Tokens { Token = new JwtSecurityTokenHandler().WriteToken(token), AccessTokenExpires = expires, User = user,  Role = role };
         }
 
         public string Register(RegisterRequest user)

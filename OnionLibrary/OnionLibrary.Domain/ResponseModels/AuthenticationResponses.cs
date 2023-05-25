@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OnionLibrary.Domain.DBModels;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -15,6 +16,8 @@ namespace OnionLibrary.Domain.ResponseModels
         public string Email { get; set; } = string.Empty;
         public string? AccessToken { get; set; }
         public DateTime AccessTokenExpires { get; set; }
+
+        public virtual Role Role { get; set; }
 
     }
 }

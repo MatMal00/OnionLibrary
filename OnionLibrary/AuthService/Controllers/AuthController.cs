@@ -27,8 +27,9 @@ namespace AuthService.Controllers
                 return Unauthorized("Wrong e-mial or password");
 
             var user = token.User;
+            var role = token.Role;
 
-            return Ok(new LoginResponse() { Id = user.Id, Email = user.Email, FirstName = user.FirstName, Lastname = user.Lastname, AccessToken = token.Token, AccessTokenExpires = token.AccessTokenExpires });
+            return Ok(new LoginResponse() { Id = user.Id, Email = user.Email, FirstName = user.FirstName, Lastname = user.Lastname, AccessToken = token.Token, AccessTokenExpires = token.AccessTokenExpires, Role = role });
         }
 
         [HttpPost("register")]
