@@ -1,4 +1,4 @@
-import { TestBed, tick, fakeAsync, ComponentFixture } from '@angular/core/testing';
+import { TestBed, ComponentFixture } from '@angular/core/testing';
 import { Router } from '@angular/router';
 import { LoginComponent } from './login.component';
 import { BooksService } from 'src/app/shared/services/books.service';
