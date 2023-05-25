@@ -29,7 +29,6 @@ namespace OnionLibrary.REST.API.Controllers
             return users;
         }
 
-        [Authorize]
         [HttpPut]
         public ActionResult<string> PutUser(int id, UserPutRequest user)
         {
@@ -49,7 +48,6 @@ namespace OnionLibrary.REST.API.Controllers
             return "Edited";
         }
 
-        [Authorize]
         [HttpDelete("{id}")]
         public ActionResult<string> DeleteUser(int id)
         {

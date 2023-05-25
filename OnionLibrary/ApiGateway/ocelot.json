@@ -71,9 +71,9 @@
       "DownstreamPathTemplate": "/api/books/{id}"
     },
 
-    // Auth Web API
+    // Auth Web API Lgin
     {
-      "UpstreamPathTemplate": "/api/auth",
+      "UpstreamPathTemplate": "/api/auth/login",
       "UpstreamHttpMethod": [ "Post" ],
 
       "DownstreamScheme": "https",
@@ -83,7 +83,22 @@
           "Port": 7150
         }
       ],
-      "DownstreamPathTemplate": "/api/auth"
+      "DownstreamPathTemplate": "/api/auth/login"
+    },
+
+    // Auth Web API Register
+    {
+      "UpstreamPathTemplate": "/api/auth/register",
+      "UpstreamHttpMethod": [ "Post" ],
+
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7150
+        }
+      ],
+      "DownstreamPathTemplate": "/api/auth/register"
     }
   ],
   "GlobalConfiguration": {

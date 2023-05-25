@@ -42,7 +42,6 @@ namespace OnionLibrary.REST.API.Controllers
             }
         }
 
-        [Authorize]
         [HttpPost]
         public ActionResult<BookResponse> PostBook(Book book)
         {
@@ -51,7 +50,6 @@ namespace OnionLibrary.REST.API.Controllers
             return CreatedAtAction("GetBook", new { id = book.Id }, book);
         }
 
-        [Authorize]
         [HttpPut("{id}")]
         public ActionResult<string> PutBook(int id, BookPutRequest book)
         {
@@ -71,7 +69,6 @@ namespace OnionLibrary.REST.API.Controllers
             return "Edited";
         }
 
-        [Authorize]
         [HttpDelete("{id}")]
         public ActionResult<string> DeleteBook(int id)
         {
