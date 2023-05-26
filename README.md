@@ -27,7 +27,7 @@ w programie sql server management studio, a następnie wykonać skrypt
 5. 5.	W aplikacji są dostępne dwa typu użytkowników (admin oraz user)
 •	Admin – usuwanie, edycja książek oraz przeglądanie książek
  
- - email: admin@admin.pl hasło: test123
+ - email: admin123@admin.pl hasło: test123
  
 •	User – możliwość składania zamówień oraz przeglądania książek
  
