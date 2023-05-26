@@ -71,6 +71,36 @@
       "DownstreamPathTemplate": "/api/books/{id}"
     },
 
+    // Rented API
+    {
+      "UpstreamPathTemplate": "/api/rented",
+      "UpstreamHttpMethod": [ "Post" ],
+
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7249
+        }
+      ],
+      "DownstreamPathTemplate": "/api/rented"
+    },
+
+    // Orders API
+    {
+      "UpstreamPathTemplate": "/api/orders",
+      "UpstreamHttpMethod": [ "Post" ],
+
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7249
+        }
+      ],
+      "DownstreamPathTemplate": "/api/orders"
+    },
+
     // Auth Web API Lgin
     {
       "UpstreamPathTemplate": "/api/auth/login",
