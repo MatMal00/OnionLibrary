@@ -41,6 +41,8 @@ export class EditModalComponent implements OnInit {
 
   public deleteBook(bookId: number): void {
     this._booksService.deleteBook(bookId).subscribe();
+
+    this.modalRef.close();
   }
 
   public save(bookId: number): void {
